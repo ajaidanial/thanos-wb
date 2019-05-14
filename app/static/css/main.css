@@ -5,10 +5,16 @@ body, html {
 }
 
 .card {
-    width: 20rem;
+    width: 22rem;
     padding: 15px;
 }
 
 .input-group-text {
     width: 2.8rem;
+}
+
+@media screen and (max-width: 720px) {
+    .card {
+        width: 100%;
+    }
 }
