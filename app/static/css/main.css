@@ -5,8 +5,12 @@ body, html {
 }
 
 .card {
-    width: 22rem;
+    width: 25rem;
     padding: 15px;
+}
+
+.modal-dialog {
+    width: 25rem;
 }
 
 .input-group-text {
@@ -16,5 +20,12 @@ body, html {
 @media screen and (max-width: 720px) {
     .card {
         width: 100%;
+    }
+    .modal {
+        padding: 5px;
+    }
+    .modal-dialog {
+        width: 100%;
+        margin: 0;
     }
 }
