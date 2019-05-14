@@ -3,3 +3,12 @@ body, html {
     padding: 0;
     height: 100%;
 }
+
+.card {
+    width: 20rem;
+    padding: 15px;
+}
+
+.input-group-text {
+    width: 2.8rem;
+}
