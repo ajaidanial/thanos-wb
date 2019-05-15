@@ -19,7 +19,7 @@ body, html {
 
 @media screen and (max-width: 720px) {
     .card {
-        width: calc(100% - 10px);
+        width: calc(100% - 15px);
     }
     .modal {
         padding: 5px;
