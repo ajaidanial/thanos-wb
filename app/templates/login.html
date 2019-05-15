@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Hello World</title>
+    <title>Thanos - Wb</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="A word builder app with the name of a villain." name="description">
@@ -49,14 +49,17 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form class="mb-0">
+                    <form class="mb-0 needs-validation" method="POST" action="/validate" novalidate>
                         <div class="form-group">
                             <label class="sr-only">Username</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-user"></i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" class="form-control" placeholder="Username" required>
+                                <div class="invalid-feedback">
+                                    Please type a username.
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -65,7 +68,10 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-eye"></i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Password">
+                                <input type="text" class="form-control" placeholder="Password" required>
+                                <div class="invalid-feedback">
+                                    Please type a password.
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -76,7 +82,10 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fas fa-file-signature"></i></div>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="First name">
+                                        <input type="text" class="form-control" placeholder="First name" required>
+                                        <div class="invalid-feedback">
+                                            Please type your first name.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -85,7 +94,10 @@
                                         <div class="input-group-prepend">
                                             <div class="input-group-text"><i class="fas fa-file-signature"></i></div>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Last name">
+                                        <input type="text" class="form-control" placeholder="Last name" required>
+                                        <div class="invalid-feedback">
+                                            Please type your last name.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +108,10 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-envelope-open"></i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Email id">
+                                <input type="text" class="form-control" placeholder="Email id" required>
+                                <div class="invalid-feedback">
+                                    Please type your email.
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Sign up</button>
@@ -112,6 +127,7 @@
     <script src="{% static 'vendor/SemanticUI/semantic.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/popper.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/bootstrap.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
