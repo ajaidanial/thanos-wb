@@ -1,33 +1,34 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .card {
-    width: 25rem;
-    padding: 15px;
+  width: 25rem;
+  padding: 15px;
 }
 
 .modal-dialog {
-    width: 25rem;
+  width: 30rem;
 }
 
 .input-group-text {
-    width: 2.8rem;
+  width: 2.8rem;
 }
 
 @media screen and (max-width: 720px) {
-    .card {
-        width: calc(100% - 15px);
-    }
-    .modal {
-        padding: 5px;
-    }
-    .modal-dialog {
-        width: 100%;
-        margin: 0;
-    }
+  .card {
+    width: calc(100% - 15px);
+  }
+  .modal {
+    padding: 5px;
+  }
+  .modal-dialog {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .center {
