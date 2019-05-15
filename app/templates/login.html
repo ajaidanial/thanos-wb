@@ -18,14 +18,17 @@
 <body>
 
     <div class="container">
-        <form class="card shadow center">
+        <form class="card shadow center needs-validation" method="POST" action="/validate" novalidate>
             <div class="form-group">
                 <label class="sr-only">Username</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="Username" required minlength="5">
+                    <div class="invalid-feedback">
+                        Type your registered username.
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -34,7 +37,10 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-eye"></i></div>
                     </div>
-                    <input type="text" class="form-control" placeholder="Password">
+                    <input type="text" class="form-control" placeholder="Password" required minlength="5">
+                    <div class="invalid-feedback">
+                        Type your registered password.
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Sign in</button>
@@ -58,7 +64,7 @@
                                 </div>
                                 <input type="text" class="form-control" placeholder="Username" required minlength="5">
                                 <div class="invalid-feedback">
-                                    Please type a username | MIN: 5.
+                                    Type a username.
                                 </div>
                             </div>
                         </div>
@@ -70,7 +76,7 @@
                                 </div>
                                 <input type="text" class="form-control" placeholder="Password" required minlength="5">
                                 <div class="invalid-feedback">
-                                    Please type a password | MIN: 5.
+                                    Type a password.
                                 </div>
                             </div>
                         </div>
@@ -84,7 +90,7 @@
                                         </div>
                                         <input type="text" class="form-control" placeholder="First name" required>
                                         <div class="invalid-feedback">
-                                            Please type your first name.
+                                            Type your first name.
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +102,7 @@
                                         </div>
                                         <input type="text" class="form-control" placeholder="Last name" required>
                                         <div class="invalid-feedback">
-                                            Please type your last name.
+                                            Type your last name.
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +116,7 @@
                                 </div>
                                 <input type="text" class="form-control" placeholder="Email id" required>
                                 <div class="invalid-feedback">
-                                    Please type your valid email.
+                                    Type your valid email.
                                 </div>
                             </div>
                         </div>
