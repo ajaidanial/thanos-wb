@@ -15,3 +15,7 @@
         });
     }, false);
 })();
+
+$('#signup_un').on('input', function (e) {
+    $('#signup_un').val(this.value.replace(" ", "").replace(/[^a-zA-Z0-9]/g, ''));
+});
