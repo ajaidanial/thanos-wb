@@ -12,4 +12,8 @@ def login(request):
 @csrf_exempt
 def validate(request):
     if request.method == 'POST':
-        return HttpResponse("Hello World")
+        if 'login' in request.POST:
+            return HttpResponse("Hello World | login")
+
+        if 'signup' in request.POST:
+            return HttpResponse("Hello World | sign up")
