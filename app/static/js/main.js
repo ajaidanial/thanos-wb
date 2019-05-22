@@ -16,11 +16,22 @@
                         ajaxReq($('#signup'))
                     }
                 }
-                form.classList.add('was-validated');
+                invalid_feedback_op(form)
             }, false);
         });
     }, false);
 })();
+
+function invalid_feedback_op(form) {
+    form.classList.add('was-validated');
+    if (form.id === 'login') {
+        $(form).find('#signin_un').removeClass('is-invalid');
+        $(form).find('#signin_pass').removeClass('is-invalid');
+    }
+    else {
+        $(form).find('#signup_un').removeClass('is-invalid');
+    }
+}
 
 $('#signup_un').on('input', function (e) {
     $('#signup_un').val(this.value.replace(" ", "").replace(/[^a-zA-Z0-9]/g, ''));
@@ -57,10 +68,14 @@ function ajaxReq(form) {
                 form.submit();
             }
             else {
+                $(form).removeClass('was-validated');
                 if (response['msg'] === 'username_not_unique') {
+                    $(form).find('#signup_un').addClass('is-invalid');
                     alert("Username already taken.");
                 }
                 if (response['msg'] === 'invalid_details') {
+                    $(form).find('#signin_un').addClass('is-invalid');
+                    $(form).find('#signin_pass').addClass('is-invalid');
                     alert("Username and Password does not match.");
                 }
             }
