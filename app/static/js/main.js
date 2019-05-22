@@ -16,20 +16,32 @@
                         ajaxReq($('#signup'))
                     }
                 }
-                invalid_feedback_op(form)
+                invalid_feedback_op(form);
             }, false);
         });
     }, false);
 })();
 
-function invalid_feedback_op(form) {
-    form.classList.add('was-validated');
-    if (form.id === 'login') {
-        $(form).find('#signin_un').removeClass('is-invalid');
-        $(form).find('#signin_pass').removeClass('is-invalid');
+function invalid_feedback_op(form, msg = "") {
+    if (msg !== "") {
+        $(form).removeClass('was-validated');
+        if (msg === "username_not_unique") {
+            $(form).find('#signup_un').addClass('is-invalid');
+        }
+        if (msg === "invalid_details") {
+            $(form).find('#signin_un').addClass('is-invalid');
+            $(form).find('#signin_pass').addClass('is-invalid');
+        }
     }
-    else {
-        $(form).find('#signup_un').removeClass('is-invalid');
+    if (msg === "") {
+        $(form).addClass('was-validated');
+        if (form.id === 'login') {
+            $(form).find('#signin_un').removeClass('is-invalid');
+            $(form).find('#signin_pass').removeClass('is-invalid');
+        }
+        else {
+            $(form).find('#signup_un').removeClass('is-invalid');
+        }
     }
 }
 
@@ -62,20 +74,15 @@ function ajaxReq(form) {
             show_hide_Loader(form)
         },
         success: function (response) {
-            console.log(response);
             if (response['success']) {
-                // TODO: action here
                 form.submit();
             }
             else {
-                $(form).removeClass('was-validated');
+                invalid_feedback_op(form, response['msg']);
                 if (response['msg'] === 'username_not_unique') {
-                    $(form).find('#signup_un').addClass('is-invalid');
                     alert("Username already taken.");
                 }
                 if (response['msg'] === 'invalid_details') {
-                    $(form).find('#signin_un').addClass('is-invalid');
-                    $(form).find('#signin_pass').addClass('is-invalid');
                     alert("Username and Password does not match.");
                 }
             }
