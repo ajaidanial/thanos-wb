@@ -50,3 +50,9 @@ def is_valid_sign_in(username: str, password: str):
     except User.DoesNotExist:
         return False
     return True
+
+
+@csrf_exempt
+def chat(request):
+    return HttpResponse("Hello World")
+# TODO: check auth

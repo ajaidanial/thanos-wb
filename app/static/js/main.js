@@ -54,7 +54,7 @@ function ajaxReq(form) {
             console.log(response);
             if (response['success']) {
                 // TODO: action here
-                alert("Success");
+                form.submit();
             }
             else {
                 if (response['msg'] === 'username_not_unique') {
