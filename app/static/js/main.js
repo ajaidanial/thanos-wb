@@ -32,13 +32,13 @@ $('#signin_un').on('input', function (e) {
 
 function show_hide_Loader(form) {
     var btn = form.find('.submit_btn');
-    if (btn.prop('disables')) {
-        btn.prop('disabled', false);
-        btn.find('.spinner-border').addClass("d-none")
-    }
-    else {
+    if (btn.find('.spinner-border').hasClass("d-none")) {
         btn.prop('disabled', true);
         btn.find('.spinner-border').removeClass("d-none")
+    }
+    else {
+        btn.prop('disabled', false);
+        btn.find('.spinner-border').addClass("d-none")
     }
 }
 
@@ -53,9 +53,9 @@ function ajaxReq(form) {
         success: function (response) {
             console.log(response);
             if (response['success']) {
-                show_hide_Loader(form);
                 alert(response['form']);
             }
+            show_hide_Loader(form);
         },
         error: function () {
         }
