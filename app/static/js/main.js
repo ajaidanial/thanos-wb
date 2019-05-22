@@ -53,7 +53,13 @@ function ajaxReq(form) {
         success: function (response) {
             console.log(response);
             if (response['success']) {
-                alert(response['form']);
+                // TODO: action here
+                alert("Success");
+            }
+            else {
+                if (!response['unique_user']) {
+                    alert("Username already taken!!!");
+                }
             }
             show_hide_Loader(form);
         },
@@ -61,3 +67,4 @@ function ajaxReq(form) {
         }
     });
 }
+// TODO: add char check
