@@ -57,8 +57,11 @@ function ajaxReq(form) {
                 alert("Success");
             }
             else {
-                if (!response['unique_user']) {
-                    alert("Username already taken!!!");
+                if (response['msg'] === 'username_not_unique') {
+                    alert("Username already taken.");
+                }
+                if (response['msg'] === 'invalid_details') {
+                    alert("Username and Password does not match.");
                 }
             }
             show_hide_Loader(form);
