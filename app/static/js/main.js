@@ -50,11 +50,11 @@ function ajaxReq(form) {
         beforeSend: function () {
             show_hide_Loader(form)
         },
-        success: function (msg) {
-            if (msg == 'OK') {
-                show_hide_Loader(form)
-            }
-            else {
+        success: function (response) {
+            console.log(response);
+            if (response['success']) {
+                show_hide_Loader(form);
+                alert(response['form']);
             }
         },
         error: function () {

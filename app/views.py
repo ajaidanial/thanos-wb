@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 
@@ -12,8 +12,9 @@ def login(request):
 @csrf_exempt
 def validate(request):
     if request.method == 'POST':
+        t = request.POST
+        print(t)
         if 'login' in request.POST:
-            return HttpResponse("Hello World | login")
-
-        if 'signup' in request.POST:
-            return HttpResponse("Hello World | sign up")
+            return JsonResponse({'success': True, 'form': 'login'})
+        else:
+            return JsonResponse({'success': True, 'form': 'signup'})
