@@ -62,7 +62,9 @@ def chat(request):
         return HttpResponseRedirect('/chat')
     else:
         if is_session_present(request):
-            return HttpResponse("Hello user: " + request.session['username'])
+            template = loader.get_template('chat.html')
+            context = {}
+            return HttpResponse(template.render(context, request))
         else:
             return HttpResponseRedirect('/')
 
